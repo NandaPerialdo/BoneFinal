@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {NavigationContainer} from '@react-navigation/native'
+import{createNativeStackNavigator} from '@react-navigation/native-stack';
+import {AtivarSensores} from './src/pages/config'
+import { HomePA } from './src/pages/homePA';
 
+//navegação entre telas
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="homePA" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="homePA" component={HomePA} />
+        <Stack.Screen name="config" component={AtivarSensores} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
