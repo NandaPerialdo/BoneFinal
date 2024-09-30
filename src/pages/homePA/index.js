@@ -14,7 +14,7 @@ export function HomePA({ navigation }){
 
     {/*Botão Conectar Voltar */}
       <View>
-      <TouchableOpacity style={styles.buttonVoltar}>
+      <TouchableOpacity style={styles.buttonVoltar} onPress={() => navigation.navigate('#INSERIR LINK DA TELA DE INICIO')}>
           <Image source={require('../../../src/assets/buttonVoltar.png')} style={styles.imageVoltar} />
         </TouchableOpacity>
       </View>
@@ -31,7 +31,7 @@ export function HomePA({ navigation }){
         </TouchableOpacity>
 
         {/*Botão de Rastreamento */}  
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate('rastreamento')}>
           <Image source={require('../../../src/assets/buttonRastrear.png')} style={styles.imageButton}/>
         </TouchableOpacity>
         </View>
