@@ -6,7 +6,7 @@ import { CheckBox } from 'react-native-elements'
 export function AtivarSensores(){
    const [check1, setCheck1] = useState(false);
    const [check2, setCheck2] = useState(false);
-   const [check3, setCheck3] = useState(false);
+   const [check3, setCheck3] = useState(true);
 
    return(
       <View style={styles.container}>
@@ -17,19 +17,46 @@ export function AtivarSensores(){
             </Text>
          </View>
 
-         {/*Check Boxes*/}
-         <View>
-         <CheckBox
-                  checked={check1} 
-                  onPress={() => setCheck1(!check1)} 
-                  containerStyle={styles.checkboxContainer} 
-                  checkedColor="#232323" 
-                  uncheckedColor="#FFFFFF"
-                  textStyle={styles.checkboxText}
-                  size={70} 
-                  />
-         <CheckBox title="Opção 2" checked={check2} onPress={() => setCheck2(!check2)}/>
-         <CheckBox title="Opção 3" checked={true} disabled={true}/>
+         <View style={styles.checkboxContainer}>
+            {/*Check Box 1*/}
+            <View style={styles.checkbox} >
+            <Text style={[styles.checkboxText, {marginRight: 100, marginLeft: 30}]}>Longe</Text>
+            <CheckBox
+                     checked={check1} 
+                     onPress={() => setCheck1(!check1)} 
+                     containerStyle={styles.checkbox} 
+                     checkedColor="#FFCF66" 
+                     uncheckedColor="#FFFFFF"
+                     size={70} 
+                     />
+            </View>
+
+            {/*Check Box 2*/}
+            <View style={styles.checkbox}>
+            <Text style={[styles.checkboxText, {marginRight: 101, marginLeft: 30}]}>Médio</Text>
+            <CheckBox
+                     checked={check2} 
+                     onPress={() => setCheck2(!check2)} 
+                     containerStyle={styles.checkbox} 
+                     checkedColor="#FFCF66" 
+                     uncheckedColor="#FFFFFF"
+                     size={70} 
+                     />
+            </View>
+
+            {/*Check Box 3*/}
+            <View style={styles.checkbox}>
+            <Text style={[styles.checkboxText, {marginRight: 20, marginLeft: 30}]}>Muito Perto</Text>
+            <CheckBox
+                     checked={check3} 
+                     onPress={() => setCheck3(!check3)} 
+                     containerStyle={styles.checkbox} 
+                     checkedColor="#FFCF66" 
+                     uncheckedColor="#FFFFFF"
+                     size={70} 
+                     disabled={true}
+                     />
+            </View>
          </View>
       </View>
    ) 
@@ -60,17 +87,31 @@ const styles = StyleSheet.create({
    //estilo do texto do titulo
    textoTitulo:{
       color: '#FFCF66',
-      fontSize: 30,
+      fontSize: 40,
       fontWeight: '', // Negrito
    },
    //estilo do checkbox
-   checkboxContainer:{
+   checkbox:{
       backgroundColor: 'transparent',  // Fundo transparente
       borderWidth: 0,                  // Remove qualquer borda
    },
-   //estilo do texto da checkbox
-   checkboxText:{
-      fontSize: 35,        // Tamanho do texto
-      color: '#333',       // Cor do texto
-   },
+   //estilo da view do checkbox
+   checkbox: {
+      flexDirection: 'row',  // Alinha os itens em linha
+      alignItems: 'center',  // Centraliza verticalmente
+      marginBottom: 15,      // Espaçamento entre as linhas (checkboxes)
+    },
+    //estilo do texto do checkbox
+    checkboxText:{
+      fontSize: 35,
+      color: '#FFFFFF',
+      marginBottom: 30,
+      //marginRight: '1%',
+    },
+    checkboxContainer:{
+      flex: 1,                       // O contêiner ocupa a tela toda
+      justifyContent: 'center',       // Centraliza verticalmente
+      alignItems: 'center',           // Centraliza horizontalmente
+      marginTop: 100,
+    },
 })
