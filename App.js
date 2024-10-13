@@ -1,8 +1,8 @@
 import {NavigationContainer} from '@react-navigation/native'
 import{createNativeStackNavigator} from '@react-navigation/native-stack';
-import {AtivarSensores} from './src/pages/config'
-import { HomePA } from './src/pages/homePA'
-import {Rastrear} from './src/pages/rastreamento'
+import {AtivarSensores} from './src/Paginas/config'
+import { HomePA } from './src/Paginas/homePA'
+import {Rastrear} from './src/Paginas/rastreamento'
 
 //navegação entre telas
 const Stack = createNativeStackNavigator();

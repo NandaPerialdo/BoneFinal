@@ -9,30 +9,30 @@ export function HomePA({ navigation }){
     {/*Botão Conectar ao Bluetooth */}
 
       <TouchableOpacity style={styles.buttonTopStyle}>
-        <Image source={require('../../../src/assets/buttonBluetooth.png')} style={styles.imageBluetooth}/>
+        <Image source={require('../assets/buttonBluetooth.png')} style={styles.imageBluetooth}/>
       </TouchableOpacity>
 
     {/*Botão Conectar Voltar */}
       <View>
       <TouchableOpacity style={styles.buttonVoltar} onPress={() => navigation.navigate('#INSERIR LINK DA TELA DE INICIO')}>
-          <Image source={require('../../../src/assets/buttonVoltar.png')} style={styles.imageVoltar} />
+          <Image source={require('../assets/buttonVoltar.png')} style={styles.imageVoltar} />
         </TouchableOpacity>
       </View>
 
       <View>
       {/*Botão de Configuração */}
         <TouchableOpacity onPress={() => navigation.navigate('config')}>
-          <Image source={require('../../../src/assets/buttonConfig.png')} style={styles.imageButton}/>
+          <Image source={require('../assets/buttonConfig.png')} style={styles.imageButton}/>
         </TouchableOpacity>
       
       {/*Botão de Emergência */}
         <TouchableOpacity>
-          <Image source={require('../../../src/assets/buttonEmergencia.png')} style={styles.imageButton}/>
+          <Image source={require('../assets/buttonEmergencia.png')} style={styles.imageButton}/>
         </TouchableOpacity>
 
         {/*Botão de Rastreamento */}  
         <TouchableOpacity onPress={() => navigation.navigate('rastreamento')}>
-          <Image source={require('../../../src/assets/buttonRastrear.png')} style={styles.imageButton}/>
+          <Image source={require('../assets/buttonRastrear.png')} style={styles.imageButton}/>
         </TouchableOpacity>
         </View>
 
